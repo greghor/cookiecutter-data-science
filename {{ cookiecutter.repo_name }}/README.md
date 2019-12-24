@@ -4,53 +4,49 @@
 {{cookiecutter.description}}
 
 Project Organization
-------------
+  ------------
 
     ├── LICENSE
-    ├── Makefile           <- Makefile with commands like `make data` or `make train`
-    ├── README.md          <- The top-level README for developers using this project.
-    ├── data
-    │   ├── external       <- Data from third party sources.
-    │   ├── interim        <- Intermediate data that has been transformed.
-    │   ├── processed      <- The final, canonical data sets for modeling.
-    │   └── raw            <- The original, immutable data dump.
-    │
-    ├── docs               <- A default Sphinx project; see sphinx-doc.org for details
-    │
-    ├── models             <- Trained and serialized models, model predictions, or model summaries
-    │
-    ├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-    │                         the creator's initials, and a short `-` delimited description, e.g.
-    │                         `1.0-jqp-initial-data-exploration`.
-    │
-    ├── references         <- Data dictionaries, manuals, and all other explanatory materials.
-    │
-    ├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
-    │   └── figures        <- Generated graphics and figures to be used in reporting
-    │
-    ├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
-    │                         generated with `pip freeze > requirements.txt`
-    │
-    ├── setup.py           <- makes project pip installable (pip install -e .) so src can be imported
-    ├── src                <- Source code for use in this project.
-    │   ├── __init__.py    <- Makes src a Python module
-    │   │
-    │   ├── data           <- Scripts to download or generate data
-    │   │   └── make_dataset.py
-    │   │
-    │   ├── features       <- Scripts to turn raw data into features for modeling
-    │   │   └── build_features.py
-    │   │
-    │   ├── models         <- Scripts to train models and then use trained models to make
-    │   │   │                 predictions
-    │   │   ├── predict_model.py
-    │   │   └── train_model.py
-    │   │
-    │   └── visualization  <- Scripts to create exploratory and results oriented visualizations
-    │       └── visualize.py
-    │
-    └── tox.ini            <- tox file with settings for running tox; see tox.testrun.org
-
+    ├── Makefile             <- Contains instructions for command line execution
+    ├── README.md
+    ├── data                 <- Base data directory, no data will be directly held under this folder
+    │   ├── archive          <- Archived data that is not in use, out of date or no longer needed.
+    │   ├── interim          <- Intermediate data that has been transformed, this could be data that is undergoing staging but is not yet ready for models or to be cut for presentations
+    │   ├── processed        <- Final data ready for training models, or scoring models, doing data cuts
+    │   └── raw              <- Original data from clients and/or third party, this data is raw form and could include dictionaries
+    ├── docs                 <- A default Sphinx project; see sphinx-doc.org for details
+    │   ├── Makefile
+    │   ├── commands.rst
+    │   ├── conf.py
+    │   ├── getting-started.rst
+    │   ├── index.rst
+    │   └── make.bat
+    ├── model                <- If only one tool is used then files can be stored directly under folder
+    │   ├── llamasoft        <- For Llamasoft models this is self-contained file that holds code and data.
+    │   ├── python
+    │   ├── r
+    │   └── spss
+    ├── output
+    │   ├── log              <- Log files if scripts have developed to capture error messaging that might occur
+    │   └── results          <- Model output, could include model output such as coefficient values, t-tests, variable importance, accuracy statistics etc
+    │       ├── predict      <- Sub folder for capturing predictions
+    │       └── visuals
+    │           ├── figures  <- Sub folder for figures created as part of the model development and evaluation, might be diagnostic plots or variable importance plots
+    │           └── tableau  <- Dashboards created show insights on models
+    ├── references
+    ├── requirements.txt
+    ├── setup.py
+    ├── src
+    │   ├── assets
+    │   ├── data             <- Data pipelines, merging and preparation and feature engineering scripts
+    │   ├── environement     <- Environment directory contains docker containers used to create either r or python sandbox environments, anaconda environments, R environment (R version and package versions).
+    │   ├── explore          <- Notebooks/scripts used in the initial exploration and discovery phase
+    │   ├── main             <- Scripts that spawn other scripts such as data prep, model training and interference and testing
+    │   ├── model            <- Model training, hyper parameter tuning, evaluation and prediction scripts
+    │   ├── test             <- Test scripts used to run through scenarios to ensure scripts are fit for purpose
+    │   └── utils            <- Scripts that don't fit into the other categories
+    ├── test_environment.py
+    └── tox.ini
 
 --------
 
